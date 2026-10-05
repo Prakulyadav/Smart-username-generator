@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Username Generator</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Our CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="grid"></div>
+    </div>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <span class="logo-dot"></span>
+            SMART<span>USER</span>
+        </div>
+
+        <div class="nav-right">
+            <span class="status">
+                <span class="status-dot"></span>
+                PYTHON ENGINE ONLINE
+            </span>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main class="main-container">
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    PYTHON • STRING LOGIC • GENERATOR
+                </div>
+
+                <h1>
+                    Create your
+                    <span>digital identity.</span>
+                </h1>
+
+                <p>
+                    Transform your personal information into a unique
+                    username using Python string operations and logic.
+                </p>
+
+                <button class="start-btn" id="startBtn">
+                    <span>START GENERATING</span>
+                    <span class="arrow">→</span>
+                </button>
+
+            </div>
+
+
+            <!-- 3D VISUAL -->
+
+            <div class="hero-visual">
+
+                <div class="orbit orbit-outer"></div>
+                <div class="orbit orbit-middle"></div>
+
+                <div class="core">
+
+                    <div class="core-symbol">@</div>
+
+                    <div class="core-text">
+                        USER
+                        <span>IDENTITY</span>
+                    </div>
+
+                </div>
+
+                <div class="floating-card card-one">
+                    <span>NAME</span>
+                    <strong>Bhavishya</strong>
+                </div>
+
+                <div class="floating-card card-two">
+                    <span>YEAR</span>
+                    <strong>2007</strong>
+                </div>
+
+                <div class="floating-card card-three">
+                    <span>STATUS</span>
+                    <strong>READY</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GENERATOR SECTION -->
+
+        <section class="generator-section" id="generator">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    STEP 01
+                </div>
+
+                <h2>
+                    Build your identity
+                </h2>
+
+                <p>
+                    Enter your details and let the Python engine do the rest.
+                </p>
+
+            </div>
+
+
+            <div class="generator-layout">
+
+                <!-- FORM -->
+
+                <div class="glass-card form-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <span class="card-number">01</span>
+
+                            <h3>Your information</h3>
+                        </div>
+
+                        <span class="live-dot"></span>
+
+                    </div>
+
+
+                    <form id="generatorForm">
+
+                        <div class="input-group">
+
+                            <label for="name">
+                                FULL NAME
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="e.g. Bhavishya Yadav"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="city">
+                                CITY
+                            </label>
+
+                            <input
+                                type="text"
+                                id="city"
+                                placeholder="e.g. Chandigarh"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="dob">
+                                DATE OF BIRTH
+                            </label>
+
+                            <input
+                                type="text"
+                                id="dob"
+                                placeholder="DD/MM/YYYY"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="input-group">
+
+                            <label for="word">
+                                FAVOURITE WORD
+                            </label>
+
+                            <input
+                                type="text"
+                                id="word"
+                                placeholder="e.g. Sajan"
+                                required
+                            >
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="generate-btn"
+                        >
+                            <span>GENERATE IDENTITY</span>
+                            <span>→</span>
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- PREVIEW -->
+
+                <div class="glass-card preview-card">
+
+                    <div class="preview-top">
+
+                        <span class="card-number">
+                            02
+                        </span>
+
+                        <span>
+                            LIVE PREVIEW
+                        </span>
+
+                    </div>
+
+
+                    <div class="preview-content">
+
+                        <div class="preview-icon">
+                            @
+                        </div>
+
+                        <span class="preview-label">
+                            YOUR USERNAME
+                        </span>
+
+                        <h3 id="previewUsername">
+                            waiting...
+                        </h3>
+
+                        <p>
+                            Your generated identity
+                            will appear here.
+                        </p>
+
+                    </div>
+
+
+                    <div class="preview-bottom">
+
+                        <span>
+                            PYTHON POWERED
+                        </span>
+
+                        <span>
+                            ●
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULTS -->
+
+        <section class="results-section" id="results">
+
+            <div class="section-heading">
+
+                <div class="eyebrow">
+                    GENERATED RESULT
+                </div>
+
+                <h2>
+                    Your digital identity
+                </h2>
+
+            </div>
+
+
+            <div class="results-grid">
+
+                <!-- USERNAME -->
+
+                <div class="result-card username-card">
+
+                    <span class="result-label">
+                        USERNAME
+                    </span>
+
+                    <div class="result-value">
+                        <span id="usernameResult">
+                            —
+                        </span>
+
+                        <button
+                            class="copy-btn"
+                            data-copy="usernameResult"
+                        >
+                            COPY
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="result-card">
+
+                    <span class="result-label">
+                        PASSWORD SUGGESTION
+                    </span>
+
+                    <div class="result-value">
+                        <span id="passwordResult">
+                            —
+                        </span>
+
+                        <button
+                            class="copy-btn"
+                            data-copy="passwordResult"
+                        >
+                            COPY
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ANALYSIS -->
+
+            <div class="analysis-card glass-card">
+
+                <div class="analysis-header">
+
+                    <div>
+                        <span class="card-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Python analysis
+                        </h3>
+                    </div>
+
+                    <span class="analysis-status">
+                        COMPLETE
+                    </span>
+
+                </div>
+
+
+                <div class="analysis-grid">
+
+                    <div class="analysis-item">
+                        <span>FIRST CHARACTER</span>
+                        <strong id="firstCharacter">—</strong>
+                    </div>
+
+                    <div class="analysis-item">
+                        <span>LAST CHARACTER</span>
+                        <strong id="lastCharacter">—</strong>
+                    </div>
+
+                    <div class="analysis-item">
+                        <span>NAME LENGTH</span>
+                        <strong id="nameLength">—</strong>
+                    </div>
+
+                    <div class="analysis-item">
+                        <span>REVERSED NAME</span>
+                        <strong id="reversedName">—</strong>
+                    </div>
+
+                    <div class="analysis-item">
+                        <span>LAST TWO DIGITS</span>
+                        <strong id="lastDigits">—</strong>
+                    </div>
+
+                    <div class="analysis-item">
+                        <span>'A' IN NAME</span>
+                        <strong id="aInName">—</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <span>
+            SMART USERNAME GENERATOR
+        </span>
+
+        <span>
+            BUILT WITH PYTHON
+        </span>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
